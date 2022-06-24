@@ -1,0 +1,14 @@
+trigger:
+- master
+strategy:
+ matrix:
+   linux:
+     operatingsystem: ubuntu-latest
+   mac:
+     operatingsystem: macos-latest
+pool:
+  name: default
+  vmImage: $(operatingsystem)
+
+steps:
+- script: echo executing script on $(operatingsystem)
