@@ -12,3 +12,8 @@ pool:
 
 steps:
 - script: echo executing script on $(operatingsystem)
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
